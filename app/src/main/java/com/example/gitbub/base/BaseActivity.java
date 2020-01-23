@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gitbub.di.Injector;
+import com.example.gitbub.di.ScreenInjector;
+
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -14,6 +17,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private static String INSTANCE_ID = "instance_id";
     private String instanceId;
+
+    @Inject ScreenInjector screenInjector;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,4 +48,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             Injector.clearComponent(this);
         }
     }
+
+    public ScreenInjector getScreenInjector() {
+        return screenInjector;
+    };
 }
