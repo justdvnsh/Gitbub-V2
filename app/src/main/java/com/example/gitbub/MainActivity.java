@@ -1,4 +1,4 @@
-package com.example.gitbub.home;
+package com.example.gitbub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
